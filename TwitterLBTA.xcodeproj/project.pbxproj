@@ -12,6 +12,7 @@
 		B020E1921E1C0D5F009CB824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B020E1911E1C0D5F009CB824 /* Assets.xcassets */; };
 		B020E1951E1C0D5F009CB824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B020E1931E1C0D5F009CB824 /* LaunchScreen.storyboard */; };
 		B020E19D1E1C0E87009CB824 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B020E19C1E1C0E87009CB824 /* HomeController.swift */; };
+		B0B1BA6C1E4BBAF400FB1307 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1BA6B1E4BBAF400FB1307 /* Service.swift */; };
 		B0D1AE881E44CAEE0090EFD2 /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1AE871E44CAEE0090EFD2 /* HomeDataSourceController.swift */; };
 		B0D1AE8D1E44CFA90090EFD2 /* UserHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1AE8C1E44CFA90090EFD2 /* UserHeaderFooter.swift */; };
 		B0D1AE8F1E44CFF60090EFD2 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1AE8E1E44CFF60090EFD2 /* HomeDataSource.swift */; };
@@ -31,6 +32,7 @@
 		B020E1941E1C0D5F009CB824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B020E1961E1C0D5F009CB824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B020E19C1E1C0E87009CB824 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		B0B1BA6B1E4BBAF400FB1307 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B0D1AE871E44CAEE0090EFD2 /* HomeDataSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
 		B0D1AE8C1E44CFA90090EFD2 /* UserHeaderFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderFooter.swift; sourceTree = "<group>"; };
 		B0D1AE8E1E44CFF60090EFD2 /* HomeDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		B020E1891E1C0D5E009CB824 /* TwitterLBTA */ = {
 			isa = PBXGroup;
 			children = (
+				B0B1BA6A1E4BBAE000FB1307 /* Service */,
 				B0D1AE8B1E44CF540090EFD2 /* View */,
 				B0D1AE8A1E44CF4B0090EFD2 /* Model */,
 				B0D1AE891E44CF3E0090EFD2 /* Controller */,
@@ -102,6 +105,14 @@
 				B020E1961E1C0D5F009CB824 /* Info.plist */,
 			);
 			path = TwitterLBTA;
+			sourceTree = "<group>";
+		};
+		B0B1BA6A1E4BBAE000FB1307 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B0B1BA6B1E4BBAF400FB1307 /* Service.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		B0D1AE891E44CF3E0090EFD2 /* Controller */ = {
@@ -263,6 +274,7 @@
 				B0D1AE8D1E44CFA90090EFD2 /* UserHeaderFooter.swift in Sources */,
 				B020E18B1E1C0D5E009CB824 /* AppDelegate.swift in Sources */,
 				B0D1AE951E48B0EE0090EFD2 /* HomeDataSourceController+navbar.swift in Sources */,
+				B0B1BA6C1E4BBAF400FB1307 /* Service.swift in Sources */,
 				B020E19D1E1C0E87009CB824 /* HomeController.swift in Sources */,
 				B0D1AE931E44F8860090EFD2 /* UserCell.swift in Sources */,
 			);

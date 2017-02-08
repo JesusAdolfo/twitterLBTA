@@ -12,13 +12,45 @@ import SwiftyJSON
 
 class HomeDataSource: Datasource, JSONDecodable {
     
-    let users: [User] = {
-        let chaplinUser = User(name: "Chaplin", username: "@cchaplin", bioText: "I do not have much patience with a thing of beauty that must be explained to be understood. If it does need additional interpretation by someone other than the creator, then I question whether it has fulfilled its purpose.", profileImage: #imageLiteral(resourceName: "chaplin") )
+    let users: [User]
+    
+    required init(json: JSON) throws {
+        print("Now ready to parse json! \n", json)
         
-        let einsteinUser = User(name: "Einstein", username: "@mc2", bioText: "imagination is more important than knowledge.The important thing is not to stop questioning. Curiosity has its own reason for existing.Anyone who has never made a mistake has never tried anything new. Anyone who has never made a mistake has never tried anything new Anyone who has never made a mistake has never tried anything new!", profileImage: #imageLiteral(resourceName: "einstein"))
         
-        return [chaplinUser, einsteinUser]
-    }()
+        var users = [User]()
+        
+        let array = json["users"].array
+        for userJson in array! {
+            
+            let name = userJson["name"].stringValue
+            let username = userJson["username"].stringValue
+            let bio = userJson["bio"].stringValue
+            
+            let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
+            
+            users.append(user)
+        }
+        
+        let tweetsJsonArray = json["tweets"].array
+        for tweetJson in tweetsJsonArray! {
+            let userJson = tweetJson["user"]
+            
+            let name = userJson["name"].stringValue
+            let username = userJson["username"].stringValue
+            let bio = userJson["bio"].stringValue
+            
+            let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
+            let message = tweetJson["message"].stringValue
+            
+            let tweet = Tweet(user: user, message: message)
+            
+            print(tweet.user.username)
+            
+        }
+        
+        self.users = users
+    }
     
 
     let words = ["cell1", "cell2", "cell3"]

@@ -25,59 +25,13 @@ class HomeDataSourceController: DatasourceController {
         
         setupNavigationBarItems()
         
-//        let homeDataSource = HomeDataSource()
-//        self.datasource = homeDataSource
         
-        fetchHomeFeed()
-        
-    }
-    
-    let tron = TRON(baseURL: "https://api.letsbuildthatapp.com")
-    
-    class Home: JSONDecodable {
-        
-        let users: [User]
-        
-        required init(json: JSON) throws {
-            print("Now ready to parse json! \n", json)
-            
-            
-            var users = [User]()
-            
-            let array = json["users"].array
-            for userJson in array! {
-                
-                let name = userJson["name"].stringValue
-                let username = userJson["username"].stringValue
-                let bio = userJson["bio"].stringValue
-                
-                let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
-    
-                users.append(user)
-            }
-            self.users = users
-        }
-    }
-    
-    class JSONError: JSONDecodable {
-        required init(json: JSON) throws {
-            print("JSON ERROR")
-        }
-    }
-    
-    fileprivate func fetchHomeFeed(){
-        //fetching JSON with TRON
-        let request: APIRequest <HomeDataSource, JSONError> = tron.request("/twitter/home")
-        
-        request.perform(withSuccess: { (home) in
-            print("Successfuly fetched our JSON :)")
-            
-            print(home.users.count)
-        }) { (err) in
-            print("We had an error fetching JSON :( ", err)
+        Service.sharedInstance.fetchHomeFeed { (homeDataSource) in
+            self.datasource = homeDataSource
         }
         
     }
+
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
